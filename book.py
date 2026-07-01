@@ -36,15 +36,3 @@ class Book:
             data.get("borrowers", [])
         )
     
-if __name__ == "__main__":
-    # 测试创建对象
-    book1 = Book("101", "Python入门教程", "张三", 5)
-    print("测试1-创建图书：", book1.title, "库存：", book1.stock)
-    # 测试转字典
-    book_dict = book1.to_dict()
-    print("测试2-转字典：", book_dict)
-    # 测试从字典还原
-    test_data = {"book_id": "102", "title": "Java基础", "author": "李四", "stock": 3, "borrowers": ["王五"]}
-    book2 = Book.from_dict(test_data)
-    print("测试3-字典转对象：", book2.title, "借阅人：", book2.borrowers)
-    print("\n所有测试通过！")
